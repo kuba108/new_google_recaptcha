@@ -3,6 +3,7 @@ require "new_google_recaptcha/railtie"
 module NewGoogleRecaptcha
   mattr_accessor :site_key
   mattr_accessor :secret_key
+  mattr_accessor :onload_function_name
 
   def self.setup
     yield(self)

@@ -13,11 +13,11 @@ module NewGoogleRecaptcha
       raw %Q{
         <input name="new_google_recaptcha_token" type="hidden" id="#{id}"/>
         <script>
-          grecaptcha.ready(function() {
+          function #{NewGoogleRecaptcha.onload_function_name}() {
             grecaptcha.execute("#{NewGoogleRecaptcha.site_key}", {action: "#{action}"}).then(function(token) {
               document.getElementById("#{id}").value = token;
             });
-          });
+          }
         </script>
       }
     end
